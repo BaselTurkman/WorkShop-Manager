@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="png" href="assets/images/Logo.png">
+    <title>تفاصيل المحطة</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="vendor/fontawsome/all.min.css">
+    <!-- css files -->
+    <link rel="stylesheet" href="assets/css style/style.css">
+</head>
+<body>
+  <!-- Navbar Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242424;">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="assets/images/navbar-logo.png" alt="Not Found" height="70px" width="110px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- User-Information -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="user-info" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <button class="btn btn-dark fs-5"> 
+                  <i class="fa-regular fa-user" style="color: #ffffff; border-radius: 50%;"></i>
+                </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="user-info">
+                  <li><a class="dropdown-item" href="#">UserInfo</a></li>
+                  <li><a class="dropdown-item" href="#">Help</a></li>
+                  <li><a class="dropdown-item" href="صفحة الدخول.html">Log out</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <div class="col username" style="color: white;"> فرح طعمة</div>
+                <div class="col email" style="color: white;">farah@gmail.com</div>
+              </li>
+              <!-- Noteifiction -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="noteifiction" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                  <button type="button" class="btn btn-dark position-relative">
+                    <i class="fa-regular fa-bell fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                    </span>
+                  </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="noteifiction">
+                  <li><a class="dropdown-item" href="#">Noteifiction</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">You have no noteifiction</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="row justify-content-between">
+              
+              <div class="col">
+                <p style="color: whitesmoke; font-size: 20px; font-weight: 400; ">JET<span style="color: #0dcaf0;">IN404</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container-fluid ">
+        <!-- main content -->
+        <div class="row">
+          <div class="col-9 col-lg-10  ps-5 pe-5">
+            <!-- main-header -->
+            <div class="row"  style="direction: rtl;">
+              <div class="col-12 text-center fw-bold p-2  fs-4 mt-4">
+                تفاصيل المحطة: <span class="station-name" >محطة الناقورة</span>
+              </div>
+            </div>
+            <!-- تفاصيل المحطة -->
+            <div class="row mt-5 me-lg-5" style="direction: rtl;">
+              <div class="col-12 col-lg-8" >
+                <div class="row">
+                  <div class="input-group mb-3" style="direction: rtl;">
+                    <label for="" class="d-flex align-self-center col-lg-2 form-label"><span class="hidden-label">اسم المحطة:</span> </label>
+                    <input type="text" class="form-control " disabled value="محطة الناقورة" aria-label="Username" aria-describedby="basic-addon1">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group mb-3" style="direction: rtl;">
+                    <label for="" class="d-flex align-self-center col-lg-2 form-label"><span class="hidden-label">اسم المالك:</span> </label>
+                    <input type="text" class="form-control " disabled value="ابوشرك" aria-label="Username" aria-describedby="basic-addon1">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group mb-3" style="direction: rtl;">
+                    <label for="" class="d-flex align-self-center col-lg-2 form-label"><span class="hidden-label">رقم الهاتف :</span> </label>
+                    <input type="text" class="form-control " disabled value=" 0592756247" aria-label="Username" aria-describedby="basic-addon1">
+                    
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group mb-3" style="direction: rtl;">
+                    <label for="" class="d-flex align-self-center col-lg-2 form-label"><span class="hidden-label">الرصيد المتبقي:</span> </label>
+                    <input type="text" class="form-control " disabled value=" 250" aria-label="Username" aria-describedby="basic-addon1"> 
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="input-group mb-3 d-flex justify-content-evenly" style="direction: rtl;">
+                    <input type="button" class="btn btn-secondary" value="تعديل" data-bs-toggle="modal" data-bs-target="#gas-station-edit">
+                    <input type="button" class="btn btn-success"  value=" اضافة رصيد" data-bs-toggle="modal" data-bs-target="#gas-station-add-balance">
+                    <input type="button" class="btn btn-danger" value="حذف المحطة" data-bs-toggle="modal" data-bs-target="#delete-gas-station">
+                    <!-- edit form modal -->
+                    <div class="modal fade" id="gas-station-edit" data-bs-backdrop="static" tabindex="-1" aria-labelledby="gas-station-edit" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- header form -->
+                          <div class="modal-header d-flex justify-content-center align-items-center">
+                            <h5 class="modal-title text-center" id="staticBackdropLabel">تعديل المحطة</h5>
+                          </div>
+                          <!-- edit form -->
+                          <div class="modal-body">
+                            <div class="mb-3">
+                              <label for="formGroupExampleInput" class="form-label">اسم المحطة:</label>
+                              <input type="text" class="form-control" value="محطة الناقورة" id="formGroupExampleInput">
+                            </div>
+                            <div class="mb-3">
+                              <label for="formGroupExampleInput2" class="form-label">اسم المالك:</label>
+                              <input type="text" class="form-control" value="ابوشرك" id="formGroupExampleInput2" >
+                            </div>
+                            <div class="mb-3">
+                              <label for="formGroupExampleInput3" class="form-label">رقم الهاتف المحمول:</label>
+                              <input type="text" class="form-control" value="0592756247" id="formGroupExampleInput3" >
+                            </div>
+                          </div>
+                          <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">حفظ التعديل</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الغاء الامر </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end edit modal -->
+
+                    <!-- add balance modal -->
+                    <div class="modal fade" id="gas-station-add-balance" data-bs-backdrop="static" tabindex="-1" aria-labelledby="gas-station-add-balance" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <!-- header form -->
+                          <div class="modal-header d-flex justify-content-center align-items-center">
+                            <h5 class="modal-title text-center" id="staticBackdropLabel">اضافة رصيد للمحطة</h5>
+                          </div>
+                          <!-- add balance modal -->
+                          <div class="modal-body">
+                            <div class="mb-3">
+                              <label for="formGroupExampleInput4" class="form-label">اضافة رصيد :</label>
+                              <input type="text" class="form-control" id="formGroupExampleInput4">
+                            </div>
+                          </div>
+                          <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">اضافة رصيد </button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الغاء الامر </button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end add balance modal -->
+
+                    <!-- delete gas station modal -->
+                    <div class="modal fade" id="delete-gas-station" tabindex="-1" aria-labelledby="delete-gas-station" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-body" style="direction: rtl;">
+                            <p class="card-text fs-5 p-1">هل انت متاكد من حذف المحطة؟</p>
+                          </div>
+                          <div class="modal-footer d-flex justify-content-between">
+                            <button type="button" class="btn btn-success" data-bs-dismiss="modal">لا</button>
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#sd-1">نعم</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- end delete gas station modal -->
+
+                  </div>
+
+                </div>
+              </div>
+            </div>
+            <!-- up -->
+            <div class="row">
+              <div class="col">
+                <button class="btn-dark btn up">up</button>
+              </div>
+            </div>
+          </div>
+          <!-- sidebar content -->
+          <div class="col-3 col-lg-2 mt-0" style="background-color: #242424;">
+            <aside class="m-3 mt-4 mb-4" >
+              <div class="row text-center " >
+                <ul>
+                 <li class="list-item p-sm-0">
+                  <a href="">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الصفحة الرئيسة</span>
+                      <i class="fa-solid fa-house"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item">
+                  <a href="">
+                    <div class="link-container">
+                     <span class="sidebar-info me-2">الاحصائيات</span>
+                     <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Employees.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الموظفين</span>
+                      <i class="fa-solid fa-people-group" ></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Expenses.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2"> النفقات</span>
+                      <i class="fa-solid fa-money-check-dollar"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Vehicles.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الاليات</span>
+                      <i class="fa-solid fa-tractor"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Workshops.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الورشات</span>
+                      <i class="fa-solid fa-gears"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="checks.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الشيكات</span>
+                      <i class="fa-solid fa-money-check"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Stations.html">
+                    <div class="link-container-active mb-4">
+                      <span class="sidebar-info me-2">المحطات</span>
+                      <i class="fa-solid fa-gas-pump"></i>
+                    </div>
+                  </a>
+                 </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+      <script src="assets/javascript/up.js"></script>
+</body>
+</html>

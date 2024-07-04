@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>النفقات</title>
+    <link rel="icon" type="png" href="assets/images/Logo.png">
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="vendor/fontawsome/all.min.css">
+    <!-- css files -->
+    <link rel="stylesheet" href="assets/css style/style.css">
+</head>
+<body>
+  <!-- Navbar Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242424;">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="assets/images/navbar-logo.png" alt="Not Found" ="70px" width="110px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- User-Information -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="user-info" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <button class="btn btn-dark fs-5"> 
+                  <i class="fa-regular fa-user" style="color: #ffffff; border-radius: 50%;"></i>
+                </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="user-info">
+                  <li><a class="dropdown-item" href="#">UserInfo</a></li>
+                  <li><a class="dropdown-item" href="#">Help</a></li>
+                  <li><a class="dropdown-item" href="Login_page.html">Log out</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <div class="col username" style="color: white;"> فرح طعمة</div>
+                <div class="col email" style="color: white;">farah@gmail.com</div>
+              </li>
+              <!-- Noteifiction -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="noteifiction" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                  <button type="button" class="btn btn-dark position-relative">
+                    <i class="fa-regular fa-bell fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                    </span>
+                  </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="noteifiction">
+                  <li><a class="dropdown-item" href="#">Noteifiction</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">You have no noteifiction</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="row justify-content-between">
+              
+              <div class="col">
+                <p style="color: whitesmoke; font-size: 20px; font-weight: 400; ">JET<span style="color: #0dcaf0;">IN404</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+      <div class="container-fluid ">
+        <!-- main content -->
+        <div class="row">
+          <div class="col-9 col-lg-10  ps-5 pe-5 mb-5">
+            <!-- زر الاضافة -->
+            <div class="row">
+              <div class="d-grid gap-2 col-5 mx-auto mt-4 mb-4" >
+                <button class="btn btn-primary p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">اضافة نفقة</button>
+                <!--add employee form  -->
+                <div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h5 class="modal-title text-center" id="staticBackdropLabel">اضافة نفقة</h5>
+                      </div> 
+                        <div class="modal-body" style="direction: rtl;">
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">اختار نوع النفقة:</label>
+                            <select class="form-select mb-3" id="select-menu" name="workshop-type" aria-label=".form-select-lg example" id="formGroupExampleInput">
+                              <option value="سحب محروقات" selected>سحب محروقات</option>
+                              <option value="محروقات كاش">محروقات كاش</option>
+                              <option value="تشحيم وتزييت"> تشحيم وتزييت</option>
+                              <option value="صيانة "> صيانة</option>
+                              <option value="مصاريف تشغيلية">مصاريف تشغيلية</option>
+                            </select>
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                          <button  class="btn btn-danger" data-bs-dismiss="modal">الغاء الامر</button>
+                          <button  class="btn btn-success" id="next-btn" data-bs-target="texss" data-bs-dismiss="modal" data-bs-toggle="modal"> التالي</button>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+                <!--  نفقة سحب محروقات/نفقة محروقات كاش -->
+                <div class="modal fade" id="option1" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="option1" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <form action="">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center align-items-center">
+                          <h5 class="modal-title text-center" id="header1">نفقة سحب محروقات/نفقة محروقات كاش </h5>
+                        </div>   
+                        <div class="modal-body form-body" style="direction: rtl;">
+                          <div class="mb-2">
+                            <label for="formGroupExampleInput" class="form-label">اسم الالية:</label>
+                            <input type="text" name="vehicle-name" class="form-control" id="formGroupExampleInput">
+                          </div>
+                          <div class="mb-2">
+                            <label for="formGroupExampleInput4" class="form-label"> اسم المحطة :</label>
+                            <input type="text"  name="station-name" class="form-control" id="formGroupExampleInput4" >
+                          </div>
+                          
+                          <div class="mb-2">
+                            <label for="formGroupExampleInput6" class="form-label">تاريخ اضافة النفقة :</label>
+                            <input type="date"  class="form-control" name="expense-date" id="formGroupExampleInput6">
+                          </div>
+                          <div class="mb-2">
+                            <label for="formGroupExampleInput6" class="form-label"> تم الدفع من قبل:</label>
+                            <input type="text"  placeholder="ادخل اسم الموظف" class="form-control" name="employee-name" id="formGroupExampleInput6">
+                          </div>
+                          <div class="mb-2">
+                            <label for="formGroupExampleInput7" class="form-label"> المبلغ المدفوع  :</label>
+                            <input type="number"   class="form-control" name="payment" id="formGroupExampleInput7">
+                          </div>
+                          <div class="alert alert-danger" id="error-msg" role="alert" style="direction: rtl; display: none;">
+                          
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                          <button type="button" class="btn btn-danger cancel-btn" data-bs-target="#staticBackdrop" data-bs-toggle="modal" data-bs-dismiss="modal">الرجوع </button>
+                          <input type="submit" class="btn btn-success" id="submit-btn"  value="اضافة نفقة">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- نفقة تشحيم وتزييت/نفقة الصيانة -->
+                <div class="modal fade" id="option2" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="option2" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <form action="">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center align-items-center">
+                          <h5 class="modal-title text-center" id="header2">  نفقة تشحيم وتزييت/نفقة الصيانة</h5>
+                        </div>   
+                        <div class="modal-body form-body" style="direction: rtl;">
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput" class="form-label">اسم الالية:</label>
+                            <input type="text" name="vehicle-name" class="form-control" id="formGroupExampleInput">
+                          </div>
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput6" class="form-label">تاريخ اضافة النفقة :</label>
+                            <input type="date"  class="form-control" name="expense-date" id="formGroupExampleInput6">
+                          </div>
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput6" class="form-label"> تم الدفع من قبل:</label>
+                            <input type="text"  placeholder="ادخل اسم الموظف" class="form-control" name="employee-name" id="formGroupExampleInput6">
+                          </div>
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput7" class="form-label"> المبلغ المدفوع  :</label>
+                            <input type="number"   class="form-control" name="payment" id="formGroupExampleInput7">
+                          </div>
+                          <div class="alert alert-danger error-msg"  role="alert" style="direction: rtl; display: none;">
+                          
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                          <button type="button" class="btn btn-danger cancel-btn" data-bs-target="#staticBackdrop" data-bs-toggle="modal" data-bs-dismiss="modal">الرجوع </button>
+                          <input type="submit" class="btn btn-success submit-btn" value="اضافة نفقة">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+                <!-- نفقة المصاريف التشغيلية -->
+                <div class="modal fade" id="option3" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="option3" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <form action="">
+                      <div class="modal-content">
+                        <div class="modal-header d-flex justify-content-center align-items-center">
+                          <h5 class="modal-title text-center" id="header2">  مصاريف تشغيلية</h5>
+                        </div>   
+                        <div class="modal-body form-body" style="direction: rtl;">
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput6" class="form-label"> تم الدفع من قبل:</label>
+                            <input type="text"  placeholder="ادخل اسم الموظف" class="form-control" name="employee-name" id="formGroupExampleInput6">
+                          </div>
+                          <div class="mb-3">
+                            <label for="formGroupExampleInput7" class="form-label"> المبلغ المدفوع  :</label>
+                            <input type="number"   class="form-control" name="payment" id="formGroupExampleInput7">
+                          </div>
+                          <div class="alert alert-danger error-msg" role="alert" style="direction: rtl; display: none;">
+                            
+                          </div>
+                        </div>
+                        <div class="modal-footer d-flex justify-content-between">
+                          <button type="button" class="btn btn-danger cancel-btn" data-bs-target="#staticBackdrop" data-bs-toggle="modal" data-bs-dismiss="modal">الرجوع </button>
+                          <input type="submit" class="btn btn-success submit-btn"  data-bs-dismiss="" value="اضافة نفقة">
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- نهاية زر الاضافة -->
+            <!-- الكروت -->
+            <div class="row" id="cards-container"  style="direction: rtl;">
+              <div class="col-12 col-md-6 col-lg-4 g-lg-5 g-4" style="display: none;" >
+                <!-- بداية الكارد -->
+                <div class="card" >
+                  <i class="fa-solid fa-money-check-dollar mt-4 text-center text-dark" style="font-size: 4rem;"></i>
+                  <hr class="dropdown-divider mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-center mb-5">نفقة</h5>
+                    <div class="mb-1 col">
+                      <p class="card-text fs-6">نوع النفقة:<span class="fw-bold">  سحب محروقات</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> اسم الالية:<span class="">جرافة</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> اسم المحطة: <span class="">محطة قلقيلية</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text mt"> المبلغ المدفوع: <span class="text-success">2500</span></p>
+                    </div>
+                    <!-- first modal -->
+                    <div class="row">
+                      <div class="col d-flex justify-content-between">
+                        <button class="btn btn-primary h-50 mt-5 p-2 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#e-1">التفاصيل</button>
+                        <button class="delete-employee btn btn-danger  h-50 mt-5 p-2 " data-bs-toggle="modal" data-bs-target="#e-2">حذف</button>
+                        <!-- تفاصيل النفقة  -->
+                        <div class="modal fade" id="e-1" tabindex="-1" aria-labelledby="e-1" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header d-flex justify-content-center align-items-center">
+                                <h5 class="modal-title text-center" id="header2"> التفاصيل</h5>
+                              </div>  
+                              <div class="modal-body" style="direction: rtl;">
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput0" class="form-label">نوع النفقة:</label>
+                                  <input type="text" value="سحب محروقات" disabled name="employee-name" class="form-control" id="formGroupExampleInput0">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput" class="form-label">اسم الالية:</label>
+                                  <input type="text" disabled value="جرافة" name="employee-name" class="form-control" id="formGroupExampleInput">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput3" class="form-label">المبلغ الكلي للالية :</label>
+                                  <input type="number" disabled value="256000" name="national-id" class="form-control" id="formGroupExampleInput3" >
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput4" class="form-label"> اسم المحطة :</label>
+                                  <input type="text" disabled  value="محطة قلقيلية"  name="employee-phonenumber" class="form-control" id="formGroupExampleInput4" >
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput5" class="form-label">رصيد المحطة:</label>
+                                  <input type="number" disabled value="2500"  class="form-control" name="salary" id="formGroupExampleInput5">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput6" class="form-label">تاريخ اضافة النفقة :</label>
+                                  <input type="text" disabled value="1/4/2024"  class="form-control" name="salary" id="formGroupExampleInput6">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput6" class="form-label"> تم الدفع من قبل:</label>
+                                  <input type="text" disabled value="محمد محمد"  placeholder="ادخل اسم الموظف" class="form-control" name="salary" id="formGroupExampleInput6">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput7" class="form-label"> المبلغ المدفوع  :</label>
+                                  <input type="text"  disabled value="750"  class="form-control" name="salary" id="formGroupExampleInput7">
+                                </div>
+                              </div> 
+                              <div class="modal-footer d-flex justify-content-between">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الرجوع</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal fade" id="e-2" tabindex="-1" aria-labelledby="e-2" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body" style="direction: rtl;">
+                                <p class="card-text fs-5 p-1">هل انت متاكد من حذف النفقة</p>
+                              </div>
+                              <div class="modal-footer d-flex justify-content-between ">
+                                <form action="" class="delete-form" style="width: 100%;">
+                                <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-success " data-bs-dismiss="modal">لا</button>
+                                  <input type="submit"  class="btn btn-danger"  data-bs-target="#wait-delete-msg" data-bs-dismiss="modal"  data-bs-toggle="modal" value="نعم">
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 g-lg-5 g-4" style="display: none;" >
+                <!-- بداية الكارد -->
+                <div class="card" >
+                  <i class="fa-solid fa-money-check-dollar mt-4 text-center text-dark" style="font-size: 4rem;"></i>
+                  <hr class="dropdown-divider mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-center mb-5">نفقة</h5>
+                    <div class="mb-1 col">
+                      <p class="card-text fs-6">نوع النفقة:<span class="fw-bold">  تشحيم وتزييت  </span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> اسم الالية:<span class="">جرافة</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> اسم المحطة: <span class="">محطة قلقيلية</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text mt"> المبلغ المدفوع: <span class="text-success">2500</span></p>
+                    </div>
+                    <!-- first modal -->
+                    <div class="row">
+                      <div class="col d-flex justify-content-between">
+                        <button class="btn btn-primary h-50 mt-5 p-2 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#e-10">التفاصيل</button>
+                        <button class="btn btn-danger h-50 mt-5 p-2 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#e-5">حذف</button>
+                        <!-- تفاصيل النفقة  -->
+                        <div class="modal fade" id="e-10" tabindex="-1" aria-labelledby="e-10" aria-hidden="true">
+                          <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                              <div class="modal-header d-flex justify-content-center align-items-center">
+                                <h5 class="modal-title text-center" id="header2"> التفاصيل</h5>
+                              </div>  
+                              <div class="modal-body" style="direction: rtl;">
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput0" class="form-label">نوع النفقة:</label>
+                                  <input type="text" disabled value="تشحيم وتزييت"  class="form-control" id="formGroupExampleInput0">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput" class="form-label">اسم الالية:</label>
+                                  <input type="text" disabled value="جرافة"  class="form-control" id="formGroupExampleInput">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput3" class="form-label">المبلغ الكلي للالية :</label>
+                                  <input type="number" disabled value="256000"  class="form-control" id="formGroupExampleInput3" >
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput6" class="form-label">تاريخ اضافة النفقة :</label>
+                                  <input type="text" disabled value="1/4/2024"  class="form-control"  id="formGroupExampleInput6">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput6" class="form-label"> تم الدفع من قبل:</label>
+                                  <input type="text" disabled value="محمد محمد"  placeholder="ادخل اسم الموظف" class="form-control"  id="formGroupExampleInput6">
+                                </div>
+                                <div class="mb-2">
+                                  <label for="formGroupExampleInput7" class="form-label"> المبلغ المدفوع  :</label>
+                                  <input type="text"  disabled value="750"  class="form-control"  id="formGroupExampleInput7">
+                                </div>
+                              </div> 
+                              <div class="modal-footer d-flex justify-content-between">
+                                <button type="button" class="btn btn-danger" data-bs-dismiss="modal">الرجوع</button>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div class="modal fade" id="e-5" tabindex="-1" aria-labelledby="e-5" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body" style="direction: rtl;">
+                                <p class="card-text fs-5 p-1">هل انت متاكد من حذف النفقة</p>
+                              </div>
+                              <div class="modal-footer d-flex justify-content-between ">
+                                <form action="" class="delete-form" style="width: 100%;">
+                                <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-success " data-bs-dismiss="modal">لا</button>
+                                  <input type="submit"  class="btn btn-danger"  data-bs-target="#wait-delete-msg" data-bs-dismiss="modal"  data-bs-toggle="modal" value="نعم">
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-4 g-lg-5 g-4" style="display: none;" >
+                <!-- بداية الكارد -->
+                <div class="card" >
+                  <i class="fa-solid fa-money-check-dollar mt-4 text-center text-dark" style="font-size: 4rem;"></i>
+                  <hr class="dropdown-divider mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-center mb-5">نفقة</h5>
+                    <div class="mb-1 col">
+                      <p class="card-text fs-6">نوع النفقة:<span class="fw-bold">مصاريف تشغيلية </span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> مدفوعة من قبل :<span class="">محمد محمد</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> التاريخ: <span class=""> 4/1/2024</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text mt"> المبلغ المدفوع: <span class="text-success">2500</span></p>
+                    </div>
+                    <div class="row">
+                      <div class="col d-flex justify-content-between">
+                        <button class="btn btn-danger h-50 mt-5 p-2 d-flex justify-content-center align-items-center" data-bs-toggle="modal" data-bs-target="#e-5">حذف</button>
+              
+                        <div class="modal fade" id="e-5" tabindex="-1" aria-labelledby="e-5" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body" style="direction: rtl;">
+                                <p class="card-text fs-5 p-1">هل انت متاكد من حذف النفقة</p>
+                              </div>
+                              <div class="modal-footer d-flex justify-content-between ">
+                                <form action="" class="" style="width: 100%;">
+                                <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-success" data-bs-dismiss="modal">لا</button>
+                                  <input type="submit"  class="btn btn-danger"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#ed-1" value="نعم">
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- نهاية الكروت -->
+            <!-- up -->
+            <div class="row">
+              <div class="col">
+                <button class="btn-dark btn up">up</button>
+              </div>
+            </div>
+             <!-- Error msg -->
+             <div class="row">
+              <div class="col">
+                <button class="btn btn-primary" style="display: none;" id="alert-error-btn" data-bs-dismiss="modal"  data-bs-toggle="modal" data-bs-target="#error-btn"> hide</button>
+                <div class="modal fade" id="error-btn" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="error-btn" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-danger mt-2 mb-2 p-3 fs-5" id="error-box" style="direction: rtl;"> 
+                      </div>
+                      <div class="modal-footer d-flex justify-content-between" style="direction: rtl;">
+                        <button type="button" class="btn btn-danger refresh-btn" data-bs-dismiss="modal">اغلاق</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sussess msg add expense -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="alert-add-btn" title="اضافة موظف" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-success mt-2 mb-2 p-3 fs-5" id="msg-success" style="direction: rtl;">
+                        تم اضافة النفقة بنجاح
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success refresh-btn " data-bs-dismiss="modal">تم</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- sussess msg delete expense -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="alert-delete-btn"  data-bs-toggle="modal" data-bs-target="#exampleModal1"></button>
+                <div class="modal fade" id="exampleModal1" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-success mt-2 mb-2 p-3 fs-5" id="msg-success" style="direction: rtl;">
+                        تم حذف النفقة بنجاح
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success refresh-btn " data-bs-dismiss="modal">تم</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- wait delete msg -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="wait-delete-btn" data-bs-toggle="modal" data-bs-target="#wait-delete-msg"></button>
+                <div class="modal fade" id="wait-delete-msg" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="wait-delete-msg" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body fs-5 mt-2 mb-2" style="text-align: center; direction: rtl;">
+                        جاري الحذف..
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- wait add msg -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="wait-add-btn" data-bs-toggle="modal" data-bs-target="#wait-add-msg"></button>
+                <div class="modal fade" id="wait-add-msg" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="wait-add-msg" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body fs-5 mt-2 mb-2" style="text-align: center; direction: rtl;">
+                        جاري الاضافة..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- sidebar content -->
+          <div class="col-3 col-lg-2 mt-0" style="background-color: #242424;">
+            <aside class="m-3 mt-4 mb-4" >
+              <div class="row text-center " >
+                <ul>
+                 <li class="list-item p-sm-0">
+                  <a href="">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الصفحة الرئيسة</span>
+                      <i class="fa-solid fa-house"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item">
+                  <a href="">
+                    <div class="link-container">
+                     <span class="sidebar-info me-2">الاحصائيات</span>
+                     <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Employees.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الموظفين</span>
+                      <i class="fa-solid fa-people-group" ></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Expenses.html">
+                    <div class="link-container-active">
+                      <span class="sidebar-info me-2"> النفقات</span>
+                      <i class="fa-solid fa-money-check-dollar"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Vehicles.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الاليات</span>
+                      <i class="fa-solid fa-tractor"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Workshops.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الورشات</span>
+                      <i class="fa-solid fa-gears"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="checks.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الشيكات</span>
+                      <i class="fa-solid fa-money-check"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Stations.html">
+                    <div class="link-container mb-4">
+                      <span class="sidebar-info me-2">المحطات</span>
+                      <i class="fa-solid fa-gas-pump"></i>
+                    </div>
+                  </a>
+                 </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+      <script src="assets/javascript/script.js" type="module"></script>
+      <script src="assets/javascript/Expenses.js" type="module"></script>
+      <script src="assets/javascript/up.js"></script>
+</body>
+</html>

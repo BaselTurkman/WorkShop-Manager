@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="png" href="assets/images/Logo.png">
+    <title> الاليات</title>
+    <!-- BootStrap -->
+    <link rel="stylesheet" href="vendor/bootstrap/bootstrap.min.css">
+    <!-- icons -->
+    <link rel="stylesheet" href="vendor/fontawsome/all.min.css">
+    <!-- css files -->
+    <link rel="stylesheet" href="assets/css style/style.css">
+</head>
+<body>
+  <!-- Navbar Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #242424;">
+        <div class="container">
+          <a class="navbar-brand" href="#"><img src="assets/images/navbar-logo.png" alt="Not Found" height="70px" width="110px"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <!-- User-Information -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="user-info" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                 <button class="btn btn-dark fs-5"> 
+                  <i class="fa-regular fa-user" style="color: #ffffff; border-radius: 50%;"></i>
+                </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="user-info">
+                  <li><a class="dropdown-item" href="#">UserInfo</a></li>
+                  <li><a class="dropdown-item" href="#">Help</a></li>
+                  <li><a class="dropdown-item" href="Login_page.html">Log out</a></li>
+                </ul>
+              </li>
+              <li class="nav-item">
+                <div class="col username" style="color: white;"> فرح طعمة</div>
+                <div class="col email" style="color: white;">farah@gmail.com</div>
+              </li>
+              <!-- Noteifiction -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="noteifiction" role="button" data-bs-toggle="dropdown" aria-expanded="false"> 
+                  <button type="button" class="btn btn-dark position-relative">
+                    <i class="fa-regular fa-bell fs-5"></i>
+                    <span class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle">
+                      <span class="visually-hidden">New alerts</span>
+                    </span>
+                  </button>
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="noteifiction">
+                  <li><a class="dropdown-item" href="#">Noteifiction</a></li>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><a class="dropdown-item" href="#">You have no noteifiction</a></li>
+                </ul>
+              </li>
+            </ul>
+            <div class="row justify-content-between">
+              
+              <div class="col">
+                <p style="color: whitesmoke; font-size: 20px; font-weight: 400; ">JET<span style="color: #0dcaf0;">IN404</span></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="container-fluid ">
+        <!-- main content -->
+        <div class="row">
+          <div class="col-9 col-lg-10 mb-5 ps-5 pe-5">
+            <!-- زر الاضافة -->
+            <div class="row">
+              <div class="d-grid gap-2 col-5 mx-auto mt-4 mb-4" >
+                <button class="btn btn-primary p-2" data-bs-toggle="modal" data-bs-target="#staticBackdrop">اضافة الة</button>
+                <!--add vehicle form  -->
+               <form action="">
+                <div class="modal fade"  id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header d-flex justify-content-center align-items-center">
+                        <h5 class="modal-title text-center" id="staticBackdropLabel">اضافة الة</h5>
+                      </div>
+                      <div class="modal-body form-body" style="direction: rtl;">
+                        <div class="mb-3">
+                          <label for="formGroupExampleInput" class="form-label"> اسم الالة:</label>
+                          <input type="text" name="vehicle-name" class="form-control" id="formGroupExampleInput">
+                        </div>
+                        <div class="mb-3">
+                          <label for="formGroupExampleInput2" class="form-label">رقم النمرة:</label>
+                          <input type="text" name="vehicle-id" class="form-control" id="formGroupExampleInput2" >
+                        </div>
+                        <div class="mb-3">
+                          <label for="formGroupExampleInput3" class="form-label">سعرها الكلي:</label>
+                          <input type="number" min="0" name="vehicle-price" class="form-control" id="formGroupExampleInput3" >
+                        </div>
+                        <div class="alert alert-danger" id="error-msg" role="alert" style="direction: rtl; display: none;">
+                        
+                        </div>
+                      </div>
+                      <div class="modal-footer d-flex justify-content-between">
+                        <button type="button" class="btn btn-danger " data-bs-dismiss="modal" id="cancel-btn">الغاء الامر</button>
+                        <input type="submit" class="btn btn-success" id="submit-btn" value="اضافة الية" >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+               </form>
+              </div>
+            </div>
+            <!-- نهاية زر الاضافة -->
+            <!-- الكروت -->
+            <div class="row" id="cards-container"  style="direction: rtl;">
+              <div class="col-12 col-md-6 col-lg-4 g-lg-5 g-4" style="display: none;" >
+                <!-- بداية الكارد -->
+                <div class="card" >
+                  <i class="fa-solid fa-tractor text-center mt-5 mb-4 text-dark" style="font-size: 4rem;"></i>
+                  <hr class="dropdown-divider mt-4">
+                  <div class="card-body">
+                    <h5 class="card-title text-center mb-4">الية</h5>
+                    <div class="mb-1 col">
+                      <p class="card-text fs-6">اسم الآلة:<span class="vehicle-name">شحن ثقيل</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text"> رقم النمرة:<span class="vehicle-id">6-5469-32</span></p>
+                    </div>
+                    <div class="mb-1">
+                      <p class="card-text mt"> الحالة: <span class="text-success">قيد العمل</span></p>
+                    </div>
+                    <!-- first modal -->
+                    <div class="row">
+                      <div class="col d-flex justify-content-between">
+                        <a href="#" class="btn btn-primary mt-4 ">التفاصيل</a>
+                        <button class="delete-vehicle btn btn-danger pt-0 h-50 mt-4" data-bs-toggle="modal" data-bs-target="#v-1">حذف</button>
+                        <!-- حذف الاليةس -->
+                        <div class="modal fade" id="v-1" tabindex="-1" aria-labelledby="v-1" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                              <div class="modal-body" style="direction: rtl;">
+                                <p class="card-text fs-5 p-1">هل انت متاكد من حذف الالة؟</p>
+                              </div>
+                              <div class="modal-footer d-flex justify-content-between ">
+                                <form action="" class="delete-form" style="width: 100%;">
+                                <div class="d-flex justify-content-between">
+                                  <button type="button" class="btn btn-success " data-bs-dismiss="modal">لا</button>
+                                  <input type="submit"  class="btn btn-danger"  data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#wait-delete-msg" value="نعم">
+                                </div>
+                                </form>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- نهاية الكروت -->
+            <!-- up -->
+            <div class="row">
+              <div class="col">
+                <button class="btn-dark btn up">up</button>
+              </div>
+            </div>
+            <!-- error msg -->
+            <div class="row">
+              <div class="col">
+                <button class="btn btn-primary" style="display: none;" id="alert-error-btn" data-bs-dismiss="modal"  data-bs-toggle="modal" data-bs-target="#error-btn"> hide</button>
+                <div class="modal fade" id="error-btn" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="error-btn" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-danger mt-2 mb-2 p-3 fs-5" id="error-box" style="direction: rtl;"> 
+                      </div>
+                      <div class="modal-footer d-flex justify-content-between" style="direction: rtl;">
+                        <button type="button" class="btn btn-danger refresh-btn" data-bs-dismiss="modal">اغلاق</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Sussess msg add vehicle -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="alert-add-btn" title="اضافة موظف" data-bs-toggle="modal" data-bs-target="#exampleModal"></button>
+                <div class="modal fade" id="exampleModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-success mt-2 mb-2 p-3 fs-5" id="msg-success" style="direction: rtl;">
+                        تم اضافة الالية بنجاح
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success refresh-btn " data-bs-dismiss="modal">تم</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- sussess msg delete vehicle -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="alert-delete-btn" title="اضافة موظف" data-bs-toggle="modal" data-bs-target="#exampleModal1"></button>
+                <div class="modal fade" id="exampleModal1" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body text-success mt-2 mb-2 p-3 fs-5" id="msg-success" style="direction: rtl;">
+                        تم حذف الالية بنجاح
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success refresh-btn " data-bs-dismiss="modal">تم</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- wait delete msg -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="wait-delete-btn" data-bs-toggle="modal" data-bs-target="#wait-delete-msg"></button>
+                <div class="modal fade" id="wait-delete-msg" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="wait-delete-msg" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body fs-5 mt-2 mb-2" style="text-align: center; direction: rtl;">
+                        جاري الحذف..
+                      </div>
+                      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- wait add msg -->
+            <div class="row">
+              <div class="col">
+                <button style="display: none;" class="mt-2 mb-2 p-3 fs-5" id="wait-add-btn" data-bs-toggle="modal" data-bs-target="#wait-add-msg"></button>
+                <div class="modal fade" id="wait-add-msg" data-bs-backdrop="static" aria-hidden="true" aria-labelledby="wait-add-msg" tabindex="-1">
+                  <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                      <div class="modal-body fs-5 mt-2 mb-2" style="text-align: center; direction: rtl;">
+                        جاري الاضافة..
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- sidebar content -->
+          <div class="col-3 col-lg-2 mt-0" style="background-color: #242424;">
+            <aside class="m-3 mt-4 mb-4" >
+              <div class="row text-center " >
+                <ul>
+                 <li class="list-item p-sm-0">
+                  <a href="">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الصفحة الرئيسة</span>
+                      <i class="fa-solid fa-house"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item">
+                  <a href="">
+                    <div class="link-container">
+                     <span class="sidebar-info me-2">الاحصائيات</span>
+                     <i class="fa-solid fa-chart-simple"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Employees.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الموظفين</span>
+                      <i class="fa-solid fa-people-group" ></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Expenses.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2"> النفقات</span>
+                      <i class="fa-solid fa-money-check-dollar"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Vehicles.html">
+                    <div class="link-container-active">
+                      <span class="sidebar-info me-2">الاليات</span>
+                      <i class="fa-solid fa-tractor"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Workshops.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الورشات</span>
+                      <i class="fa-solid fa-gears"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="checks.html">
+                    <div class="link-container">
+                      <span class="sidebar-info me-2">الشيكات</span>
+                      <i class="fa-solid fa-money-check"></i>
+                    </div>
+                  </a>
+                 </li>
+                 <li class="list-item p-sm-0">
+                  <a href="Stations.html">
+                    <div class="link-container mb-4">
+                      <span class="sidebar-info me-2">المحطات</span>
+                      <i class="fa-solid fa-gas-pump"></i>
+                    </div>
+                  </a>
+                 </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+      <script src="vendor/bootstrap/bootstrap.bundle.min.js"></script>
+      <script src="assets/javascript/script.js" type="module"></script>
+      <script src="assets/javascript/Vehicles.js" type="module"></script>
+      <script src="assets/javascript/up.js"></script>
+</body>
+</html>

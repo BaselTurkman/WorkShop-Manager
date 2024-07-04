@@ -1,0 +1,114 @@
+body{
+    scroll-behavior: smooth;
+}
+
+.dropdown-menu{
+    background-color: #242424;
+}
+
+.dropdown-menu .dropdown-item{
+    color: white;
+    font-weight: 500;   
+}
+
+.dropdown-menu .dropdown-item:hover{
+    background-color: #696969;
+}
+
+.nav-item .nav-link{
+    font-size: 1.2rem;
+}
+
+.row .link-container{
+    transition: 0.2s ease all;
+}
+
+.card,label{
+    direction: rtl;
+}
+
+.list-item .link-container:hover, .list-item .link-container-active {
+    background-color: #696969;
+    border-radius: 7%;
+    color: white;
+    transform: scale(1.05);
+}
+
+.list-item .link-container:active,.list-item .link-container-active{
+    color:white
+}
+
+.list-item{
+    margin-top: 30px;
+    color: rgb(122, 139, 138);
+    list-style-type: none;
+}
+
+.link-container,.link-container-active{
+    padding: 9px;
+    border-bottom: #696969 solid 2px;
+}
+
+.list-item a{
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+aside{
+    position: sticky;
+    top: 40px;
+}
+
+.up{
+    position: fixed;
+    bottom: 10px;
+    right: -18%;
+    transition: 0.2s all;
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+
+.btn:focus{
+    box-shadow: none;
+}
+
+.card{
+    border: none;
+    box-shadow: -1px 1px 4px 0px #242424;
+    border-radius: 5%;
+}
+
+@media only screen and (min-width: 768px) {
+    .up.show{
+        right: 17%;
+    }
+}
+
+@media only screen and ( max-width: 768px) {
+    .up.show{
+        right: 25.5%;
+    }
+    aside{
+        position: static;
+    }
+}
+
+@media only screen and ( max-width: 586px) {
+    .sidebar-info{
+        display: none;
+    }
+    .hidden-label{
+        display:none;
+    }
+    
+}
+
+@media only screen and ( max-height: 600px) {
+   aside{
+    position: static;
+   }
+    
+}
+ 
